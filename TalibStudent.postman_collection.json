@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "04b2e3f6-3fab-44f2-aba4-77876aa67593",
+		"name": "TalibStudent",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27410764"
+	},
+	"item": [
+		{
+			"name": "View Fee Chalan",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE0OTM0NCwiZXhwIjoxNjg0MTUyOTQ0fQ.yIUtLx7X9ExPFy_cVBlUTCZgqVF5yoAxXxJp3uNTmiE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/students/645ebc956eb7742431141d06/fee-chalan",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"645ebc956eb7742431141d06",
+						"fee-chalan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Attendance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzE3NSwiZXhwIjoxNjg0MTU2Nzc1fQ.vxHx4pDXVWnhBbKd1Z8eYY1FL08KEH8ofQZDSi1Lauw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/students/attendance/645ebc956eb7742431141d06",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"attendance",
+						"645ebc956eb7742431141d06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"johndoe@example.com\",\r\n  \"password\": \"mypassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/students/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Marks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzQ1OSwiZXhwIjoxNjg0MTU3MDU5fQ.WvLbWkQuFnJ_lso-wEDg8IPzkAaQuUsgaAVmWOUBFGk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/students/marks/645ebc956eb7742431141d06",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"marks",
+						"645ebc956eb7742431141d06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll Course",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzQ1OSwiZXhwIjoxNjg0MTU3MDU5fQ.WvLbWkQuFnJ_lso-wEDg8IPzkAaQuUsgaAVmWOUBFGk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"studentId\": \"646191278bd326832488f194\",\r\n  \"courseId\": \"645ec45bd0b2ff44f1438005\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/students/enroll",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"enroll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Feedback",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzQ1OSwiZXhwIjoxNjg0MTU3MDU5fQ.WvLbWkQuFnJ_lso-wEDg8IPzkAaQuUsgaAVmWOUBFGk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentID\": \"645ebc5d6eb7742431141d02\",\r\n    \"teacherID\": \"987654321\",\r\n    \"feedback\": \"Needs to respect the students\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/students/feedback",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay Fee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzQ1OSwiZXhwIjoxNjg0MTU3MDU5fQ.WvLbWkQuFnJ_lso-wEDg8IPzkAaQuUsgaAVmWOUBFGk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"studentID\": \"646191278bd326832488f194\",\r\n  \"amount\": 1000,\r\n  \"token\": \"tok_visa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/students/payment",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

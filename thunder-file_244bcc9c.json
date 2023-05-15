@@ -1,0 +1,8 @@
+[
+  {
+    "_id": "64621790020aed2cd2b206e5",
+    "studentID": "7890",
+    "isPaid": false,
+    "pathToFile": "path/to/file"
+  }
+]
