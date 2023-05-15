@@ -13,7 +13,7 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE0OTM0NCwiZXhwIjoxNjg0MTUyOTQ0fQ.yIUtLx7X9ExPFy_cVBlUTCZgqVF5yoAxXxJp3uNTmiE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
 						"type": "text"
 					}
 				],
@@ -30,7 +30,68 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "View Fee Chalan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/students/645ebc956eb7742431141d06/fee-chalan",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"645ebc956eb7742431141d06",
+								"fee-chalan"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"62-z2HsnnNs3+I8buOl8aQ51MKS7hI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 13:51:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"646238d208f2de8addd4ef8e\",\n        \"studentID\": \"7890\",\n        \"isPaid\": false,\n        \"pathToFile\": \"path/to/file\"\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "View Attendance",
@@ -42,7 +103,7 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzE3NSwiZXhwIjoxNjg0MTU2Nzc1fQ.vxHx4pDXVWnhBbKd1Z8eYY1FL08KEH8ofQZDSi1Lauw",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
 						"type": "text"
 					}
 				],
@@ -68,7 +129,77 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "View Attendance",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/students/attendance/645ebc956eb7742431141d06",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"attendance",
+								"645ebc956eb7742431141d06"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1027"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"403-SVIy/qm1NEFqNdsSNjg85u3ekeI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 13:51:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"student\": {\n        \"role\": \"Student\",\n        \"_id\": \"645ebc956eb7742431141d06\",\n        \"name\": \"Mark Davis\",\n        \"rollNumber\": 7890,\n        \"email\": \"markdavis@example.com\",\n        \"class\": 11,\n        \"courses\": [\n            {\n                \"_id\": \"646238e808f2de8addd4ef90\",\n                \"name\": \"Physics\",\n                \"instructor\": \"Tim Lee\",\n                \"credits\": 3,\n                \"taughtToClass\": 11,\n                \"registrationDate\": \"2023-05-15T13:51:36.375Z\"\n            }\n        ],\n        \"password\": \"password123\",\n        \"feeChalan\": [\n            {\n                \"_id\": \"646238e808f2de8addd4ef91\",\n                \"studentID\": \"7890\",\n                \"isPaid\": false,\n                \"pathToFile\": \"path/to/file\"\n            }\n        ],\n        \"registrationDate\": \"2023-05-15T13:51:36.376Z\"\n    },\n    \"attendance\": [\n        {\n            \"_id\": \"6461f7226cd8575d604a4b65\",\n            \"studentID\": \"645ebc956eb7742431141d06\",\n            \"teacherID\": \"teacher123\",\n            \"courseID\": \"646120e201f61fdc544b3e03\",\n            \"date\": \"2023-05-16\",\n            \"isPresent\": false,\n            \"createdAt\": \"2023-05-15T09:10:58.779Z\",\n            \"updatedAt\": \"2023-05-15T09:10:58.779Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6461f7fa6cd8575d604a4b8a\",\n            \"studentID\": \"645ebc956eb7742431141d06\",\n            \"teacherID\": \"teacher123\",\n            \"courseID\": \"646120e201f61fdc544b3e03\",\n            \"date\": \"2023-05-17\",\n            \"isPresent\": false,\n            \"createdAt\": \"2023-05-15T09:14:34.124Z\",\n            \"updatedAt\": \"2023-05-15T09:14:34.124Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Login",
@@ -96,7 +227,70 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"johndoe@example.com\",\r\n  \"password\": \"mypassword\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/students/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c7-uEoGwHqbE782R9JdzL5G2lCum6o\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 13:50:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ\"\n}"
+				}
+			]
 		},
 		{
 			"name": "View Marks",
@@ -105,7 +299,7 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzQ1OSwiZXhwIjoxNjg0MTU3MDU5fQ.WvLbWkQuFnJ_lso-wEDg8IPzkAaQuUsgaAVmWOUBFGk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
 						"type": "text"
 					}
 				],
@@ -122,7 +316,68 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "View Marks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/students/marks/645ebc956eb7742431141d06",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"marks",
+								"645ebc956eb7742431141d06"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1386"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"56a-S0qA8+jWCk0iuOAMxpqTuKbmWSg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 13:52:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"student\": {\n        \"role\": \"Student\",\n        \"_id\": \"645ebc956eb7742431141d06\",\n        \"name\": \"Mark Davis\",\n        \"rollNumber\": 7890,\n        \"email\": \"markdavis@example.com\",\n        \"class\": 11,\n        \"courses\": [\n            {\n                \"_id\": \"6462390408f2de8addd4ef94\",\n                \"name\": \"Physics\",\n                \"instructor\": \"Tim Lee\",\n                \"credits\": 3,\n                \"taughtToClass\": 11,\n                \"registrationDate\": \"2023-05-15T13:52:04.120Z\"\n            }\n        ],\n        \"password\": \"password123\",\n        \"feeChalan\": [\n            {\n                \"_id\": \"6462390408f2de8addd4ef95\",\n                \"studentID\": \"7890\",\n                \"isPaid\": false,\n                \"pathToFile\": \"path/to/file\"\n            }\n        ],\n        \"registrationDate\": \"2023-05-15T13:52:04.122Z\"\n    },\n    \"marks\": [\n        {\n            \"typeOfAssessment\": \"Final Exam\",\n            \"totalMarks\": 100,\n            \"obtainedMarks\": 0,\n            \"weightage\": 60,\n            \"teacher\": \"teacher123\",\n            \"course\": \"646120e201f61fdc544b3e03\"\n        },\n        {\n            \"typeOfAssessment\": \"Final Exam\",\n            \"totalMarks\": 100,\n            \"obtainedMarks\": 0,\n            \"weightage\": 60,\n            \"teacher\": \"teacher123\",\n            \"course\": \"646120e201f61fdc544b3e03\"\n        },\n        {\n            \"typeOfAssessment\": \"Final Exam\",\n            \"totalMarks\": 100,\n            \"obtainedMarks\": 0,\n            \"weightage\": 60,\n            \"teacher\": \"teacher123\",\n            \"course\": \"646120e201f61fdc544b3e03\"\n        },\n        {\n            \"typeOfAssessment\": \"Final Exam\",\n            \"totalMarks\": 100,\n            \"obtainedMarks\": 0,\n            \"weightage\": 60,\n            \"teacher\": \"teacher123\",\n            \"course\": \"646120e201f61fdc544b3e03\"\n        },\n        {\n            \"typeOfAssessment\": \"Final Exam\",\n            \"totalMarks\": 100,\n            \"obtainedMarks\": 0,\n            \"weightage\": 60,\n            \"teacher\": \"teacher123\",\n            \"course\": \"646120e201f61fdc544b3e03\"\n        }\n    ],\n    \"courses\": [\n        {\n            \"_id\": \"646120e201f61fdc544b3e03\",\n            \"name\": \"Mathematics\",\n            \"instructor\": \"Jane Smith\",\n            \"credits\": 3,\n            \"taughtToClass\": 10,\n            \"registrationDate\": \"2023-05-15T13:52:05.632Z\"\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Enroll Course",
@@ -131,13 +386,13 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzQ1OSwiZXhwIjoxNjg0MTU3MDU5fQ.WvLbWkQuFnJ_lso-wEDg8IPzkAaQuUsgaAVmWOUBFGk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"studentId\": \"646191278bd326832488f194\",\r\n  \"courseId\": \"645ec45bd0b2ff44f1438005\"\r\n}\r\n",
+					"raw": "{\r\n  \"studentId\": \"646191278bd326832488f194\",\r\n  \"courseId\": \"646235b7d447489736e0d7bb\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -156,7 +411,76 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Enroll Course",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studentId\": \"646191278bd326832488f194\",\r\n  \"courseId\": \"646235b7d447489736e0d7bb\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/students/enroll",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"enroll"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-W1rHnQMZL0CULxKz4RSMb1ClWSA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 13:56:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Student enrolled in the course successfully\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Add Feedback",
@@ -165,13 +489,13 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzQ1OSwiZXhwIjoxNjg0MTU3MDU5fQ.WvLbWkQuFnJ_lso-wEDg8IPzkAaQuUsgaAVmWOUBFGk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"studentID\": \"645ebc5d6eb7742431141d02\",\r\n    \"teacherID\": \"987654321\",\r\n    \"feedback\": \"Needs to respect the students\"\r\n}",
+					"raw": "{\r\n    \"studentID\": \"645ebc5d6eb7742431141d02\",\r\n    \"teacherID\": \"987654321\",\r\n    \"feedback\": \"Needs to respect the students and teachers\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -190,7 +514,76 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Add Feedback",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentID\": \"645ebc5d6eb7742431141d02\",\r\n    \"teacherID\": \"987654321\",\r\n    \"feedback\": \"Needs to respect the students and teachers\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/students/feedback",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"feedback"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-Dlp4P3tvO0hbCgWzfvw+f/WU7AQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 13:52:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Anonymous feedback added successfully\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Pay Fee",
@@ -199,7 +592,7 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1MzQ1OSwiZXhwIjoxNjg0MTU3MDU5fQ.WvLbWkQuFnJ_lso-wEDg8IPzkAaQuUsgaAVmWOUBFGk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
 						"type": "text"
 					}
 				],
@@ -224,7 +617,76 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Pay Fee",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7ImlkIjoiNjQ2MTkxMjc4YmQzMjY4MzI0ODhmMTk0In0sImlhdCI6MTY4NDE1ODY1MCwiZXhwIjoxNjg0MTYyMjUwfQ.HUX0DAml3zCResx8VMv8UDqWfdjVWXAHp2eBpbdWhYQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studentID\": \"646191278bd326832488f194\",\r\n  \"amount\": 1000,\r\n  \"token\": \"tok_visa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/students/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"payment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-oV4hJxRVSENxc/wX8+mA4/Pe4tA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 13:52:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true\n}"
+				}
+			]
 		}
 	]
 }
