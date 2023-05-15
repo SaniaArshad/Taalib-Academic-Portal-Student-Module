@@ -8,6 +8,17 @@ const Feedback = require('../Models/FeedbackModel');
 const Attendance = require('../Models/AttendanceModel');
 const stripe = require('stripe')( process.env.STRIPE_SECRET_KEY);
 
+let auth = (req , res , next)=>{
+  let token = req.headers['token'];
+  jwt.verify(token , process.env.JWT_SECRET , (err , decoded)=>{
+      if(!err){
+          req.decoded = decoded;
+          next();
+      }else{
+          res.status(403).json({"Message":"Not Authorized"})
+      }
+  });
+};
 
 // Login student
 router.post('/login', async (req, res) => {
@@ -46,7 +57,7 @@ router.post('/login', async (req, res) => {
 });
 
 // View marks of a student
-router.get('/marks/:studentID', async (req, res) => {
+router.get('/marks/:studentID', auth,  async (req, res) => {
   try {
     const { studentID } = req.params;
 
@@ -69,13 +80,10 @@ router.get('/marks/:studentID', async (req, res) => {
       course: assessment.courseID, 
     }));
 
-    // Find teacher by ID
-    const teachers = await Teacher.find({ _id: { $in: marks.map((mark) => mark.teacher) } });
-
     // Find courses by ID
     const courses = await Course.find({ _id: { $in: marks.map((mark) => mark.course) } });
 
-    res.json({ student, marks, teachers, courses });
+    res.json({ student, marks, courses });
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ message: 'Server error' });
@@ -83,7 +91,7 @@ router.get('/marks/:studentID', async (req, res) => {
 });
 
 // View attendance for a student
-router.get('/attendance/:studentId', async (req, res) => {
+router.get('/attendance/:studentId', auth, async (req, res) => {
   try {
     const { studentId } = req.params;
     const student = await Student.findById(studentId);
@@ -100,23 +108,8 @@ router.get('/attendance/:studentId', async (req, res) => {
   }
 });
 
-// Route for viewing fee challans for a student
-router.get('/feeChallan/:studentId', async (req, res) => {
-  try {
-    const { studentId } = req.params;
-    const student = await Student.findById(studentId);
-    if (!student) {
-      return res.status(404).json({ message: "Student not found" });
-    }
-    res.json(student.feeChalan);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Internal server error" });
-  }
-});
-
 // Route for enrolling in a course
-router.post('/enroll', async (req, res) => {
+router.post('/enroll', auth, async (req, res) => {
   try {
     const { studentId, courseId } = req.body;
 
@@ -151,7 +144,7 @@ router.post('/enroll', async (req, res) => {
 
 
 // Add anonymous feedback
-router.post('/feedback', async (req, res) => {
+router.post('/feedback',auth, async (req, res) => {
   const {studentID, feedback, teacherID } = req.body;
 
   try {
@@ -173,7 +166,7 @@ router.post('/feedback', async (req, res) => {
 
 
 // Route for processing fee payment
-router.post('/payment', async (req, res) => {
+router.post('/payment', auth, async (req, res) => {
   try {
     const { studentID, amount, token } = req.body;
     
@@ -211,7 +204,7 @@ router.post('/payment', async (req, res) => {
 });
 
 //view fee chalan
-router.get('/:studentId/fee-chalan', async (req, res) => {
+router.get('/:studentId/fee-chalan', auth, async (req, res) => {
   const studentId = req.params.studentId;
 
   try {
