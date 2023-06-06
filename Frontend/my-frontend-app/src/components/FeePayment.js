@@ -2,71 +2,79 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-
-const FeePayment = ({ studentId }) => {
+const PaymentForm = () => {
+  const [studentID, setStudentID] = useState('');
   const [amount, setAmount] = useState('');
-  const [error, setError] = useState('');
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [paymentSuccess, setPaymentSuccess] = useState(false);
-
+  const [errorMessage, setErrorMessage] = useState('');
   const stripe = useStripe();
   const elements = useElements();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsProcessing(true);
+
+    if (!stripe || !elements) {
+      return;
+    }
 
     try {
-      const { data } = await axios.post('/students/payment', {
-        studentID: studentId,
-        amount: amount,
+      const { error, paymentMethod } = await stripe.createPaymentMethod({
+        type: 'card',
+        card: elements.getElement(CardElement),
       });
 
-      const clientSecret = data.clientSecret;
-
-      const paymentResult = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement),
-        },
-      });
-
-      if (paymentResult.error) {
-        setError(paymentResult.error.message);
-        setIsProcessing(false);
-      } else {
-        setError('');
-        setPaymentSuccess(true);
-        setIsProcessing(false);
+      if (error) {
+        throw new Error(error.message);
       }
+
+      const response = await axios.post('http://localhost:3000/students/payment', {
+        studentID,
+        amount,
+        token: "tok_visa",
+      });
+
+      console.log(response.data.success); // Success message
+
     } catch (err) {
-      setError(err.response.data.error);
-      setIsProcessing(false);
+      console.error(err);
+      setErrorMessage('Payment failed');
     }
   };
 
   return (
-    <div>
-      <h2>Fee Payment</h2>
-      {error && <p>{error}</p>}
-      {paymentSuccess ? (
-        <p>Payment successful!</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <label>
-            Amount:
-            <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
-          </label>
-          <label>
-            Card details:
-            <CardElement />
-          </label>
-          <button type="submit" disabled={!stripe || isProcessing}>
-            {isProcessing ? 'Processing...' : 'Pay'}
-          </button>
-        </form>
-      )}
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="studentID">Student ID:</label>
+        <input
+          id="studentID"
+          type="text"
+          value={studentID}
+          onChange={(e) => setStudentID(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="amount">Amount:</label>
+        <input
+          id="amount"
+          type="text"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+      </div>
+      <div className="card-details">
+        <label htmlFor="card-details">Card Details:</label>
+        <CardElement
+          id="card-details"
+          options={{ style: { base: { fontSize: '16px' } } }}
+        />
+      </div>
+      <div>
+        <button type="submit" disabled={!stripe}>
+          Pay ${amount}
+        </button>
+      </div>
+      {errorMessage && <div>{errorMessage}</div>}
+    </form>
   );
 };
 
-export default FeePayment;
+export default PaymentForm;

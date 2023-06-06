@@ -10,8 +10,9 @@ const EnrollCourse = ({ studentId }) => {
   const handleEnroll = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/students/enroll', { studentId, courseId }, {
-        headers: { token: localStorage.getItem('token') },
+      const response = await axios.post('http://localhost:3000/students/enroll', { 
+        studentId: studentId,
+        courseId
       });
       setSuccess(response.data.message);
       setError('');
@@ -27,6 +28,14 @@ const EnrollCourse = ({ studentId }) => {
       {error && <p>{error}</p>}
       {success && <p>{success}</p>}
       <form onSubmit={handleEnroll}>
+      <div>
+        <label>Student ID:</label>
+        <input
+          type="text"
+          value={studentId} // Display the studentID from props
+          disabled
+        />
+      </div>
         <label htmlFor="courseId">Course ID:</label>
         <input type="text" id="courseId" value={courseId} onChange={(e) => setCourseId(e.target.value)} />
         <button type="submit">Enroll</button>

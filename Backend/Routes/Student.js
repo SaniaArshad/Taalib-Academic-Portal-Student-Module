@@ -41,13 +41,14 @@ router.post('/login', async (req, res) => {
         id: student.id
       }
     };
+    
     jwt.sign(
       payload,
       process.env.JWT_SECRET,
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.status(200).json({ token, student });
       }
     );
   } catch (err) {
@@ -57,7 +58,7 @@ router.post('/login', async (req, res) => {
 });
 
 // View marks of a student
-router.get('/marks/:studentID', auth,  async (req, res) => {
+router.get('/marks/:studentID',  async (req, res) => {
   try {
     const { studentID } = req.params;
 
@@ -91,12 +92,13 @@ router.get('/marks/:studentID', auth,  async (req, res) => {
 });
 
 // View attendance for a student
-router.get('/attendance/:studentId', auth, async (req, res) => {
+router.get('/attendance/:studentId', async (req, res) => {
   try {
     const { studentId } = req.params;
     const student = await Student.findById(studentId);
     if (!student) {
       return res.status(404).json({ message: 'Student not found' });
+      
     }
 
     const attendance = await Attendance.find({ studentID: studentId });
@@ -109,7 +111,7 @@ router.get('/attendance/:studentId', auth, async (req, res) => {
 });
 
 // Route for enrolling in a course
-router.post('/enroll', auth, async (req, res) => {
+router.post('/enroll', async (req, res) => {
   try {
     const { studentId, courseId } = req.body;
 
@@ -145,13 +147,13 @@ router.post('/enroll', auth, async (req, res) => {
 
 
 // Add anonymous feedback
-router.post('/feedback',auth, async (req, res) => {
+router.post('/feedback', async (req, res) => {
   const {studentID, feedback, teacherID } = req.body;
 
   try {
     const newFeedback = new Feedback({
       feedback,
-      studentID, // Since it's anonymous, no student ID is provided
+      studentID,
       teacherID, // Use the provided teacher ID
     });
 
@@ -167,7 +169,7 @@ router.post('/feedback',auth, async (req, res) => {
 
 
 // Route for processing fee payment
-router.post('/payment', auth, async (req, res) => {
+router.post('/payment', async (req, res) => {
   try {
     const { studentID, amount, token } = req.body;
     
@@ -205,7 +207,7 @@ router.post('/payment', auth, async (req, res) => {
 });
 
 //view fee chalan
-router.get('/:studentId/fee-chalan', auth, async (req, res) => {
+router.get('/:studentId/fee-chalan', async (req, res) => {
   const studentId = req.params.studentId;
 
   try {

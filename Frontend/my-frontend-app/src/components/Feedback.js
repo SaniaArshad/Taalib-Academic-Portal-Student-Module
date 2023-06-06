@@ -1,53 +1,61 @@
-// src/components/Feedback.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Feedback = ({ studentId }) => {
+const FeedbackForm = ({ studentId }) => {
   const [feedback, setFeedback] = useState('');
-  const [teacherId, setTeacherId] = useState('');
-  const [error, setError] = useState('');
+  const [teacherID, setTeacherID] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post('/students/feedback', { feedback, teacherId, studentId }, {
-        headers: { token: localStorage.getItem('token') },
-      });
-        setFeedback('');
-        setTeacherId('');
-    } catch (err) {
-        setError('Error submitting feedback');
-        }
-    };
 
-    return (
-        <div>
-            <h2>Feedback</h2>
-            {error && <p>{error}</p>}
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Feedback:</label>
-                    <input
-                        type="text"
-                        value={feedback}
-                        onChange={(e) => setFeedback(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Teacher ID:</label>
-                    <input
-                        type="text"
-                        value={teacherId}
-                        onChange={(e) => setTeacherId(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    );
+    try {
+      const response = await axios.post('http://localhost:3000/students/feedback', {
+        studentID: studentId, // Include the studentID from props
+        feedback,
+        teacherID,
+      });
+      console.log(response.data.message); // Success message
+      // Reset form values
+      setFeedback('');
+      setTeacherID('');
+    } catch (err) {
+      console.error(err);
+      setErrorMessage('Server error');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Student ID:</label>
+        <input
+          type="text"
+          value={studentId} // Display the studentID from props
+          disabled
+        />
+      </div>
+      <div>
+        <label>Feedback:</label>
+        <textarea
+          value={feedback}
+          onChange={(e) => setFeedback(e.target.value)}
+        ></textarea>
+      </div>
+      <div>
+        <label>Teacher ID:</label>
+        <input
+          type="text"
+          value={teacherID}
+          onChange={(e) => setTeacherID(e.target.value)}
+        />
+      </div>
+      <div>
+        <button type="submit">Submit Feedback</button>
+      </div>
+      {errorMessage && <div>{errorMessage}</div>}
+    </form>
+  );
 };
 
-export default Feedback;
-
+export default FeedbackForm;

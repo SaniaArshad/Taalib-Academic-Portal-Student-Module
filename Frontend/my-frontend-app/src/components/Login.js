@@ -1,51 +1,85 @@
-// src/components/Login.js
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./login.css";
+import axios from "axios";
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('/students/login', { email, password });
-      const { token } = response.data;
-      localStorage.setItem('token', token);
-        window.location.href = '/dashboard';
-    } catch (err) {
-      setError('Invalid credentials');
-    }
+
+    const data = {
+      email,
+      password,
+    };
+    
+    axios
+      .post("http://localhost:3000/students/login", data)
+      .then((response) => {
+        console.log(response.data);
+        localStorage.setItem("user", JSON.stringify(response.data));
+        navigate("/Home");
+      })
+      .catch((error) => {
+        console.log(error);
+        setError("Invalid email or password");
+      });
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+    <div className="container">
+      <div
+        className="row justify-content-center align-items-center"
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="col-md-4">
+          <div className="card shadow">
+            <div className="card-body">
+              <h1 className="card-title text-center mb-4">Login - Taalib</h1>
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="email">Email:</label>
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="form-control"
+                    value={email}
+                    onChange={handleEmailChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password:</label>
+                  <input
+                    type="password"
+                    placeholder="Enter your password"
+                    className="form-control"
+                    value={password}
+                    onChange={handlePasswordChange}
+                  />
+                </div>
+                {error && <p className="text-danger">{error}</p>}
+                <button type="submit" className="btn btn-primary btn-block">
+                  Login
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      </div>
     </div>
   );
 };
 
-export default Login;
+export default LoginForm;
