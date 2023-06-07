@@ -2,10 +2,10 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
-const {Student, Course, FeeChalan} = require('../Models/StudentModel.js');
-const Assesment = require('../Models/AssessmentModel');
-const Feedback = require('../Models/FeedbackModel');
-const Attendance = require('../Models/AttendanceModel');
+const {Student, Course, FeeChalan} = require('../model/StudentModel.js');
+const Assesment = require('../model/AssessmentModel');
+const Feedback = require('../model/FeedbackModel');
+const Attendance = require('../model/AttendanceModel');
 const stripe = require('stripe')( process.env.STRIPE_SECRET_KEY);
 
 let auth = (req , res , next)=>{
