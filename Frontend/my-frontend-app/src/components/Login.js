@@ -47,7 +47,7 @@ const LoginForm = () => {
         <div className="col-md-4">
           <div className="card shadow">
             <div className="card-body">
-              <h1 className="card-title text-center mb-4">Login - Taalib</h1>
+              <h1 className="card-title text-center mb-4">Login - Taalib Student Portal</h1>
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email:</label>
