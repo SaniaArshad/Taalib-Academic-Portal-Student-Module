@@ -1,24 +1,25 @@
-/* html,
-body {
+html, body {
   height: 100%;
 }
 
 body {
   margin: 0;
-  background: linear-gradient(45deg, #49a09d, #8e8594);
+  background: linear-gradient(45deg, #768484, #716a75);
   font-family: sans-serif;
   font-weight: 100;
-  color: #fff; /* Set default text color */
-/* }
+  color: #0c0b0b; /* Set default text color */
+}
 
-.container {
+.student-marks-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-table {
+.form-label {
+  color: #fff;
+}
+.student-marks-table {
   margin: auto;
   width: 800px;
   border-collapse: collapse;
@@ -26,52 +27,98 @@ table {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-th,
-td {
+.student-marks-table th,
+.student-marks-table td {
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-th {
+.student-marks-table th {
   text-align: center;
   background-color: #55608f;
 }
 
-tbody tr:hover {
+.student-marks-table tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-tbody td {
+.student-marks-table tbody td {
   position: relative;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.student-marks-heading {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.attendance-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.attendance-table {
+  margin: auto;
+  width: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.attendance-table th {
+  text-align: center;
+  background-color: #55608f;
+}
+
+.attendance-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.attendance-heading {
   color: #fff;
   text-align: center;
   margin-bottom: 20px;
 }
 
-form {
-  margin: 20px auto;
-  max-width: 400px;
+.feedback-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  margin: 0 auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
+.form-group {
+  
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.form-input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
   border: none;
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
 
-input[type="submit"] {
+.form-button {
   width: 100%;
   padding: 10px;
   border: none;
@@ -81,9 +128,64 @@ input[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
+.form-button:hover {
   background-color: #405c82;
 }
+
+.form-error {
+  color: #f00;
+  margin-top: 10px;
+}
+.fee-challans-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.fee-challan-item {
+  margin-bottom: 20px;
+}
+
+.fee-challan-item p {
+  margin: 0;
+}
+
+.fee-challan-item a {
+  display: block;
+  margin-top: 5px;
+  color: #55608f;
+}
+
+.fee-challan-item a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #f00;
+}
+
+.no-challans {
+  color: #fff;
+}
+
+.payment-form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
 .card-details {
   margin-bottom: 20px;
 }
@@ -94,25 +196,30 @@ input[type="submit"]:hover {
   color: #fff;
 }
 
-.card-details .__PrivateStripeElement {
-  background-color: white;
+.card-details .StripeElement {
+  width: 100%;
   padding: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border-radius: 5px;
-  font-size: 210px;
 }
 
-button[type="submit"] {
+.payment-button {
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   border: none;
   background-color: #55608f;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 18px;
 }
 
-button[type="submit"]:hover {
+.payment-button:hover {
   background-color: #405c82;
-} */ 
+}
+
+.payment-error {
+  color: #f00;
+  margin-top: 10px;
+}
+

@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
 });
 
 // View marks of a student
-router.get('/marks/:studentID',  async (req, res) => {
+router.get('/marks/:studentID', auth, async (req, res) => {
   try {
     const { studentID } = req.params;
 
@@ -92,7 +92,7 @@ router.get('/marks/:studentID',  async (req, res) => {
 });
 
 // View attendance for a student
-router.get('/attendance/:studentId', async (req, res) => {
+router.get('/attendance/:studentId', auth,  async (req, res) => {
   try {
     const { studentId } = req.params;
     const student = await Student.findById(studentId);
@@ -111,7 +111,7 @@ router.get('/attendance/:studentId', async (req, res) => {
 });
 
 // Route for enrolling in a course
-router.post('/enroll', async (req, res) => {
+router.post('/enroll',auth, async (req, res) => {
   try {
     const { studentId, courseId } = req.body;
 
@@ -147,7 +147,7 @@ router.post('/enroll', async (req, res) => {
 
 
 // Add anonymous feedback
-router.post('/feedback', async (req, res) => {
+router.post('/feedback',auth, async (req, res) => {
   const {studentID, feedback, teacherID } = req.body;
 
   try {
@@ -169,7 +169,7 @@ router.post('/feedback', async (req, res) => {
 
 
 // Route for processing fee payment
-router.post('/payment', async (req, res) => {
+router.post('/payment', auth, async (req, res) => {
   try {
     const { studentID, amount, token } = req.body;
     
@@ -207,7 +207,7 @@ router.post('/payment', async (req, res) => {
 });
 
 //view fee chalan
-router.get('/:studentId/fee-chalan', async (req, res) => {
+router.get('/:studentId/fee-chalan',auth, async (req, res) => {
   const studentId = req.params.studentId;
 
   try {
@@ -227,6 +227,8 @@ router.get('/:studentId/fee-chalan', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
+
 
 
 module.exports = router;

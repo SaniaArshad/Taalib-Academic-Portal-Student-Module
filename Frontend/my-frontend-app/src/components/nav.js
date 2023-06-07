@@ -14,7 +14,7 @@ function NavBar() {
         className="navbar navbar-expand-lg navbar-dark bg-dark"
         style={{ height: "100%" }}
       >
-        <h1 className="garamond-text logo">Taalib</h1>
+        <a href="./Home"><h1 className="garamond-text logo">Taalib</h1></a>
         <button
           className="navbar-toggler"
           type="button"

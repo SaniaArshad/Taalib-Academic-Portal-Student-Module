@@ -23,31 +23,23 @@ const PaymentForm = () => {
       return;
     }
 
-    const paymentID= 'tok_visa'
-
     try {
       const { error, paymentMethod } = await stripe.createPaymentMethod({
         type: 'card',
         card: elements.getElement(CardElement),
       });
 
-      
-
       if (error) {
         throw new Error(error.message);
       }
 
-      const response = await axios.post(
-        'http://localhost:3000/students/payment',
-        {
-          studentID,
-          amount,
-          token: paymentID, // Use the payment method token
-        },
-        {
-          headers: { token: token },
-        }
-      );
+      const response = await axios.post('http://localhost:3000/students/payment', {
+        studentID,
+        amount,
+        token: paymentMethod.id,
+      }, {
+        headers: { token: token }
+      });
 
       setPaymentSuccess(true); // Set payment success state
 
@@ -61,8 +53,7 @@ const PaymentForm = () => {
     <div>
       <Nav />
       <Sidebar />
-      <br></br>
-      <h2 className="attendance-heading">Fee Payment</h2>
+
       <form onSubmit={handleSubmit} className="payment-form-container">
         <div className="card-details">
           <label htmlFor="card-details">Card Details:</label>

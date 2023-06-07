@@ -1,31 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Nav } from "react-bootstrap";
-import pro from "../images/profile.png";
 import logo from "../images/student.png";
 import course from "../images/courses.png";
+import eq from "../images/Equal-icon.png";
+import file from "../images/Files-icon.png";
+import school from "../images/school.png";
+import studentinfo from "../images/studentinfo.png";
+import "./sidebar.css";
 
 function Sidebar() {
-
   return (
-    <div
-      className="sidebar bg-dark d-flex flex-column vh-100"
-    >
+    <div className="sidebar">
       <br></br>
       <Nav defaultActiveKey="/" className="flex-column">
         <Nav.Item style={{ paddingBottom: 10 }}>
-          <Nav.Link href="/Home" className="text-light">
-            <img
-              src={pro}
-              alt="student"
-              width="30px"
-              className="sidebar-icon"
-              style={{ marginRight: "10px" }}
-            />
-            My Profile
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item style={{ paddingBottom: 10 }}>
-          <Nav.Link href="/ManageStudents" className="text-light">
+          <Nav.Link href="/ViewMarks" className="text-light">
             <img
               src={logo}
               alt="student"
@@ -33,11 +22,11 @@ function Sidebar() {
               className="sidebar-icon"
               style={{ marginRight: "10px" }}
             />
-            EnrollCourse
+            View Marks
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/ManageCourses" className="text-light">
+          <Nav.Link href="/FeeChallanView" className="text-light">
             <img
               src={course}
               alt="student"
@@ -45,7 +34,55 @@ function Sidebar() {
               className="sidebar-icon"
               style={{ marginRight: "10px" }}
             />
-            Manage Course
+            View FeeChalan
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/Feedback" className="text-light">
+            <img
+              src={eq}
+              alt="student"
+              width="30px"
+              className="sidebar-icon"
+              style={{ marginRight: "10px" }}
+            />
+            Feedback
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/EnrollCourse" className="text-light">
+            <img
+              src={file}
+              alt="student"
+              width="30px"
+              className="sidebar-icon"
+              style={{ marginRight: "10px" }}
+            />
+            Enroll Course
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/FeePayment" className="text-light">
+            <img
+              src={studentinfo}
+              alt="student"
+              width="30px"
+              className="sidebar-icon"
+              style={{ marginRight: "10px" }}
+            />
+            Fee Payment
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/Attendance" className="text-light">
+            <img
+              src={school}
+              alt="student"
+              width="30px"
+              className="sidebar-icon"
+              style={{ marginRight: "10px" }}
+            />
+            View Attendance
           </Nav.Link>
         </Nav.Item>
       </Nav>

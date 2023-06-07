@@ -16,8 +16,6 @@ import { BrowserRouter ,Routes, Route } from 'react-router-dom';
 
 const stripePromise = loadStripe('pk_test_51N67W4A1O9euvKzl5siEPcCD0DBWllVT0pADzrN7HUAZDFz9WBpujQNFwoo2rVgdy4HWL35UV0DSaN5RhLfIFGbQ00E6kwjZnX');
 function App() {
-   var studentId = '647cae3736323a2f79b9c7dd';
-   var amount= 100000;
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,7 +26,7 @@ function App() {
         <Route path="/FeeChallanView" element={<FeeChallanView />} />
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/EnrollCourse" element={<EnrollCourse />} />
-        <Route path="/FeePayment" element={<Elements stripe={stripePromise}><FeePayment amount={amount} studentId={studentId}/></Elements>} />
+        <Route path="/FeePayment" element={<Elements stripe={stripePromise}><FeePayment/></Elements>} />
         <Route path="/Attendance" element={<Attendance />} />
         </Routes>
         </BrowserRouter>
